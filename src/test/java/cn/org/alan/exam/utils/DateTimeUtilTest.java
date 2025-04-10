@@ -11,12 +11,13 @@ import java.util.List;
  * @Author Alan
  * @Version
  * @Date 2024/5/28 11:28 PM
- */ class DateTimeUtilTest {
+ */
+public class DateTimeUtilTest {
 
      @Resource
      private UserMapper userMapper;
     @Test
-    void getDate() {
+    public void getDate() {
         List<User> users = userMapper.selectList(null);
         System.out.println(users);
         // LocalDate date = DateTimeUtil.getDate();
@@ -24,7 +25,7 @@ import java.util.List;
     }
 
     @Test
-    void dateToStr() {
+    public void dateToStr() {
         System.out.println(DateTimeUtil.dateToStr(DateTimeUtil.getDate()));
     }
 }

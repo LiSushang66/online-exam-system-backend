@@ -2,6 +2,7 @@ package cn.org.alan.exam.common.handler;
 
 import cn.org.alan.exam.common.exception.ServiceRuntimeException;
 import cn.org.alan.exam.common.result.Result;
+import com.kkbapps.iprestrictionsbootstarter.Exception.IpRequestErrorException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -150,5 +151,12 @@ public class GlobalExceptionHandler {
     public Result<String> handleConstraintViolationException(ConstraintViolationException e) {
         log.error(e.getMessage(), e.getClass());
         return Result.failed(e.getMessage());
+    }
+
+    @ExceptionHandler(IpRequestErrorException.class)  // 捕获ip请求异常
+    public cn.org.alan.exam.pojo.Result businessEx(IpRequestErrorException ex)
+    {
+        ex.printStackTrace();
+        return cn.org.alan.exam.pojo.Result.error(403,ex.getIpRequestErrorEnum().getDesc());
     }
 }

@@ -14,7 +14,7 @@ public class CryptoUtilsTest {
     private CryptoUtils cryptoUtils;
 
     @Test
-    void getDate() throws Exception {
+    public void getDate() throws Exception {
         String secretKey = CryptoUtils.generateSymmetricKey(Encryption.AES_ECB_PKCS5);
         String cipherText = CryptoUtils.encryptSymmetrically(secretKey, null, "测试中文加密", Encryption.AES_ECB_PKCS5);
         System.out.println("生成的密钥为：" + secretKey);

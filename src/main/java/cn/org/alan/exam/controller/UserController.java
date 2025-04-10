@@ -131,7 +131,7 @@ public class UserController {
 
     /**
      * 用户上传头像
-     *
+     *l
      * @param file 头像文件
      * @return 返回头像地址
      */
