@@ -198,6 +198,14 @@
             <version>2.8.0</version>
         </dependency>
 
+        <!-- Coze SDK -->
+        <dependency>
+            <groupId>com.coze</groupId>
+            <artifactId>coze-api</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
+
         <dependency>
             <groupId>com.github.docker-java</groupId>
             <artifactId>docker-java</artifactId>
